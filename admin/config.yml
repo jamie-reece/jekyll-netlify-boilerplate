@@ -29,7 +29,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "Page"
     folder: "pages"
     sort: "title:asc"
-    create: true
+    create: false
     slug: "{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
@@ -51,5 +51,7 @@ collections: # A list of collections the CMS should be able to edit
             name: "author"
             widget: "list"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "About", name: "about", widget: "string"}
+              - {label: "First Name", name: "first_name", widget: "string"}
+              - {label: "Last Name", name: "last_name", widget: "string"}
+              - {label: "Short Name", name: "short_name", widget: "string"}
+              - {label: "Bio", name: "bio", widget: "string"}
