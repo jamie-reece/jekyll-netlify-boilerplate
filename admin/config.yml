@@ -20,18 +20,6 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - label: "Author"
-        name: "author"
-        widget: "select"
-      - {
-          label: 'Author',
-          name: 'author',
-          widget: 'relation',
-          collection: 'authors',
-          displayFields: [name],
-          searchFields: [name],
-          valueField: 'name',
-        }
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
@@ -41,7 +29,7 @@ collections: # A list of collections the CMS should be able to edit
     label: "Page"
     folder: "pages"
     sort: "title:asc"
-    create: true
+    create: false
     slug: "{{slug}}"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
@@ -51,17 +39,15 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
       - {label: "Body", name: "body", widget: "markdown", required: false}
     # AUTHORS
-  - name: "authors"
-    label: "Authors"
-    files:
-      - name: "authors"
-        label: "Authors"
-        file: "_data/authors.yml"
-        extension: "yml"
-        fields:
-          - label: "Author"
-            name: "author"
-            widget: "list"
-            fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "About", name: "about", widget: "string"}
+  - name: 'authors'
+    label: 'Authors'
+    folder: '_authors/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
+      - { label: 'Short Name', name: 'name', widget: 'string' }
+      - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
