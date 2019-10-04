@@ -41,7 +41,7 @@ collections: # A list of collections the CMS should be able to edit
     # AUTHORS
   - name: "authors"
     label: "Authors"
-    file: "data/authors.yml"
+    file: "_data/authors.yml"
     extension: "yml"
     fields:
       - label: "Author"
