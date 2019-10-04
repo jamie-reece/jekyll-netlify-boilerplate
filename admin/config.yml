@@ -24,6 +24,15 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Categories", name: "categories", widget: "string", required: false }
+      - {
+          label: 'Author',
+          name: 'author',
+          widget: 'relation',
+          collection: 'authors',
+          displayFields: [display_name],
+          searchFields: [display_name],
+          valueField: 'name',
+        }
     # PAGES
   - name: "page"
     label: "Page"
