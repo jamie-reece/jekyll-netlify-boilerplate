@@ -10,3 +10,5 @@
   url: /blog
 - text: Test
   url: /test
+- text: Login
+  url: /admin
