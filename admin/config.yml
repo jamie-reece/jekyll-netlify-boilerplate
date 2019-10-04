@@ -55,3 +55,18 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Last Name", name: "last_name", widget: "string"}
               - {label: "Short Name", name: "short_name", widget: "string"}
               - {label: "Bio", name: "bio", widget: "string"}
+    # NAVIGATION
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - name: "navigation"
+        label: "Navigation"
+        file: "_data/nav.yml"
+        extension: "yml"
+        fields:
+          - label: "Nav Item"
+            name: "nav_item"
+            widget: "list"
+            fields:
+              - { label: "Text", name: "text", widget: "string" }
+              - { label: "Path", name: "path", widget: "string" }
