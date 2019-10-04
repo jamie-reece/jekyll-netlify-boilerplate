@@ -24,7 +24,6 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
       - { label: "Categories", name: "categories", widget: "string", required: false }
-      - { label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: "short_name", valueField: "categories" }
     # PAGES
   - name: "page"
     label: "Page"
@@ -40,22 +39,18 @@ collections: # A list of collections the CMS should be able to edit
       - { label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false }
       - { label: "Body", name: "body", widget: "markdown", required: false }
     # AUTHORS
-  - name: "authors"
-    label: "Authors"
-    files:
-      - name: "authors"
-        label: "Authors"
-        file: "_data/authors.yml"
-        extension: "yml"
-        fields:
-          - label: "Author"
-            name: "author"
-            widget: "list"
-            fields:
-              - { label: "First Name", name: "first_name", widget: "string" }
-              - { label: "Last Name", name: "last_name", widget: "string" }
-              - { label: "Short Name", name: "short_name", widget: "string" }
-              - { label: "Bio", name: "bio", widget: "string" }
+  - name: 'authors'
+    label: 'Authors'
+    folder: '_authors/'
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'author' }
+      - { label: 'Short Name', name: 'name', widget: 'string' }
+      - { label: 'Diplay Name', name: 'display_name', widget: 'string' }
+      - { label: 'Position', name: 'position', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
     # NAVIGATION
   - name: "navigation"
     label: "Navigation"
