@@ -18,12 +18,13 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields: # The fields each document in this collection have
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss"}
-      - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
-      - {label: "Categories", name: "categories", widget: "string", required: false}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - { label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss" }
+      - { label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - { label: "Categories", name: "categories", widget: "string", required: false }
+      - { label: "Author", name: "author", widget: "relation", collection: "authors" }
     # PAGES
   - name: "page"
     label: "Page"
@@ -32,12 +33,12 @@ collections: # A list of collections the CMS should be able to edit
     create: false
     slug: "{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Permalink", name: "permalink", widget: "hidden"}
-      - {label: "Section", name: "section", widget: "hidden", default: "{{name}}"}
-      - {label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false}
-      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - { label: "Permalink", name: "permalink", widget: "hidden" }
+      - { label: "Section", name: "section", widget: "hidden", default: "{{name }}"}
+      - { label: "Intro Paragraph", name: "intro_paragraph", widget: "markdown", required: false }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
     # AUTHORS
   - name: "authors"
     label: "Authors"
@@ -51,10 +52,10 @@ collections: # A list of collections the CMS should be able to edit
             name: "author"
             widget: "list"
             fields:
-              - {label: "First Name", name: "first_name", widget: "string"}
-              - {label: "Last Name", name: "last_name", widget: "string"}
-              - {label: "Short Name", name: "short_name", widget: "string"}
-              - {label: "Bio", name: "bio", widget: "string"}
+              - { label: "First Name", name: "first_name", widget: "string" }
+              - { label: "Last Name", name: "last_name", widget: "string" }
+              - { label: "Short Name", name: "short_name", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "string" }
     # NAVIGATION
   - name: "navigation"
     label: "Navigation"
