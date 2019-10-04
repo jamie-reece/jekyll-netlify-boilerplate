@@ -43,6 +43,7 @@ collections: # A list of collections the CMS should be able to edit
     label: 'Authors'
     folder: '_authors/'
     create: true
+    identifier_field: name
     editor:
       preview: false
     fields:
